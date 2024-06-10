@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import notesService from '../services/notes/notesServices';
 import validateEnum from '../helpers/validators/validateEnum';
 import validateNonEmpty from '../helpers/validators/validateNonEmpty';
@@ -30,9 +30,9 @@ export const CreateNoteForm = ({ setNote }) => {
       notesService
         .createNote(newNote)
         .then((data) => {
-          // Actualizar el estado de notas en el componente padre
-          setNote(data);  // Aquí se pasa directamente el nuevo objeto de nota
-          // Limpiar el formulario después de agregar la nota
+         
+          setNote(data); 
+        
           setNewName('');
           setNewDescription('');
           setNewImportant(false);

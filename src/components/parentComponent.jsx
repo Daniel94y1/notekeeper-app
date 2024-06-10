@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { CreateNoteForm } from './CreateNoteForm';
 
 const ParentComponent = () => {
-  const [notes, setNotes] = useState([]);
+  const [ setNotes] = useState([]);
 
   const addNote = (newNote) => {
     setNotes((prevNotes) => [...prevNotes, newNote]);

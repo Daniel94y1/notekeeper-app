@@ -1,13 +1,11 @@
-import React from "react";
 import { Note } from "./note";
 
 export const NoteList = ({ note, setNote }) => {
-  if (!note || note.length === 0) {
-    return <p>Empty List</p>;
-  }
+  console.log("NoteList props:", note); // Debugging
 
   return (
     <div>
+      <h2>Note List</h2>
       <Note note={note} setNote={setNote} />
     </div>
   );
