@@ -1,21 +1,14 @@
-function validateType(note) {
-  const { name, description, important, status, due_date } = note;
+const validateType = (note) => {
+  const { name, description, important, status, dueDate } = note;
 
-  return (
-    isString(name) &&
-    isString(description) &&
-    isBoolean(important) &&
-    isString(status) &&
-    isString(due_date)
-  );
-}
+  // Validar que el tipo de cada propiedad es correcto
+  const isValidName = typeof name === "string";
+  const isValidDescription = typeof description === "string";
+  const isValidImportant = typeof important === "boolean";
+  const isValidStatus = typeof status === "string";
+  const isValidDueDate = typeof dueDate === "string"; // Supone que dueDate es una cadena
 
-function isString(value) {
-  return typeof value === "string";
-}
-
-function isBoolean(value) {
-  return typeof value === "boolean";
-}
+  return isValidName && isValidDescription && isValidImportant && isValidStatus && isValidDueDate;
+};
 
 export default validateType;

@@ -18,7 +18,7 @@ describe("Validation for types in a note object", () => {
     const invalidNote = {
       name: "Invalid Note",
       description: "This is an invalid note",
-      important: "true",
+      important: "true", // incorrecto: debería ser booleano
       status: "pending",
       dueDate: "2024-05-15",
     };
