@@ -1,17 +1,14 @@
-// src/helpers/validators/validateNonEmpty.js
-function validateNonEmpty(note) {
-  const { name, description, status, due_date } = note;
-  return (
-    isNonEmptyString(name) &&
-    isNonEmptyString(description) &&
-    isNonEmptyString(status) &&
-    isNonEmptyString(due_date)
-  );
-}
+const validateNonEmpty = (note) => {
+  const { title, content, important, status, dueDate } = note;
 
-function isNonEmptyString(value) {
-  return typeof value === "string" && value.trim().length > 0;
-}
+  // Validar que ninguno de los campos relevantes esté vacío
+  const isTitleNonEmpty = title !== "";
+  const isContentNonEmpty = content !== "";
+  const isImportantValid = important !== undefined; // Validar que existe y no es undefined
+  const isStatusNonEmpty = status !== "";
+  const isDueDateNonEmpty = dueDate !== ""; // Supone que dueDate no es una cadena vacía
+
+  return isTitleNonEmpty && isContentNonEmpty && isImportantValid && isStatusNonEmpty && isDueDateNonEmpty;
+};
 
 export default validateNonEmpty;
-
